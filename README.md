@@ -12,8 +12,8 @@ This is a simple **Pharmacy Management System** built as part of my technical as
 
 ## Tech Stack
 
-- **Backend:** ASP.NET Web Forms, C#, Dapper  
-- **Frontend:** HTML, CSS, Bootstrap, JavaScript  
+- **Backend:** C# , ASP.NET Web Forms, Dapper  
+- **Frontend:** HTML, CSS, JavaScript , JQuery  
 - **Database:** SQL Server  
 
 ## Getting Started
@@ -31,7 +31,7 @@ This is a simple **Pharmacy Management System** built as part of my technical as
 
 5. Login (Username : admin ; Password : admin123)
 
-## If any package issue 
+## If any package issue (Optional)
 
 1. Go to Tools → NuGet Package Manager → Package Manager Console.
 
