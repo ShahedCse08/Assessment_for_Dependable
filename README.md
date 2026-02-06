@@ -5,9 +5,9 @@ This is a simple **Pharmacy Management System** built as part of my technical as
 ## Features
 
 - Login & Logout (Session initialized on Login and Session clear on Logout)
-- Dashboard (Card : Dashboard Overview, Inventory Management , Invoice Management) 
+- Dashboard (Card : Dashboard Overview, Inventory Management Navigation , Invoice Management Navigation) 
 - Inventory Management (Basic CRUD , Search , Export to PDF)
-- Invoice Management (Master-Detail CRUD , Search , Print Invoice) 
+- Invoice Management (Master-Details CRUD , Search , Print Invoice) 
 
 
 ## Tech Stack
@@ -25,19 +25,25 @@ This is a simple **Pharmacy Management System** built as part of my technical as
 2. Execute DB Script from the link below 
    https://github.com/ShahedCse08/Assessment_for_Dependable/blob/main/PharmacyDB.sql
 
-3. Open the solution in Visual Studio 
+3. Open the solution in Visual Studio
 
-4. Go to Tools → NuGet Package Manager → Package Manager Console.
+4. Buid and run the solution
 
-5. Run 
+5. Login (Username : admin ; Password : admin123)
+
+## If any package issue 
+
+1. Go to Tools → NuGet Package Manager → Package Manager Console.
+
+2. Run 
    ```bash
    Update-Package -reinstall
 
-6. Type "N" and hit enter if you get the qestion below 
+3. Type "N" and hit enter if you get the qestion 
  (File 'App_Start\RouteConfig.cs' already exists in project 'PMS.Web'. Do you want to overwrite it?)
 
-7. Build the solution and run 
+4. Build and run  the solution 
 
-8. Login (Username : admin ; Password : admin123)
+5. Login (Username : admin ; Password : admin123)
   
    
