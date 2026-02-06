@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="dashboard-card card-billing">
-                <h3 class="card-title">Billing & Invoicing</h3>
+                <h3 class="card-title">Invoice Management</h3>
                 <p class="card-description">
                     The Billing section lets you create invoices with multiple medicines in a single transaction.
   You can enter customer details, add or remove items dynamically, 
