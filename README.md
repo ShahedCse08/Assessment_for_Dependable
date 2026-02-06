@@ -21,7 +21,7 @@ This is a simple **Pharmacy Management System** built as part of my technical as
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ShahedCse08/Assessment_for_Dependable.git
-   
+
 2. Execute DB Script from the link below 
    https://github.com/ShahedCse08/Assessment_for_Dependable/blob/main/PharmacyDB.sql
 
@@ -34,8 +34,7 @@ This is a simple **Pharmacy Management System** built as part of my technical as
    Update-Package -reinstall
 
 6. Type "N" and hit enter if you get the qestion below 
-  ```bash
-  File 'App_Start\RouteConfig.cs' already exists in project 'PMS.Web'. Do you want to overwrite it? 
+ (File 'App_Start\RouteConfig.cs' already exists in project 'PMS.Web'. Do you want to overwrite it?)
 
 7. Build the solution and run 
 
