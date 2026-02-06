@@ -1,0 +1,564 @@
+﻿
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    color: #005792;
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #005792;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background: #004576;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 87, 146, 0.2);
+    }
+
+.btn-success {
+    background: #4CAF50;
+    color: white;
+}
+
+    .btn-success:hover {
+        background: #3d8b40;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+    }
+
+.btn-cancel {
+    background: #757575;
+    color: white;
+}
+
+    .btn-cancel:hover {
+        background: #616161;
+        transform: translateY(-2px);
+    }
+
+.btn-add {
+    background: #FF9800;
+    color: white;
+}
+
+    .btn-add:hover {
+        background: #f57c00;
+        transform: translateY(-2px);
+    }
+
+
+.section-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.invoices-grid {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+    .invoices-grid th {
+        background: #f0f7ff;
+        color: #005792;
+        font-weight: 600;
+        padding: 16px 12px;
+        text-align: left;
+        border-bottom: 2px solid #e1e8f0;
+    }
+
+    .invoices-grid td {
+        padding: 14px 12px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .invoices-grid tr:hover {
+        background-color: #f9fbfd;
+    }
+
+.btn-action {
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: white;
+    margin: 0 2px;
+}
+
+.btn-edit {
+    background: #2196F3;
+}
+
+    .btn-edit:hover {
+        background: #0b7dda;
+        transform: translateY(-1px);
+    }
+
+.btn-delete {
+    background: #d32f2f;
+}
+
+    .btn-delete:hover {
+        background: #b71c1c;
+        transform: translateY(-1px);
+    }
+
+.btn-print {
+    background: #4CAF50;
+}
+
+    .btn-print:hover {
+        background: #3d8b40;
+        transform: translateY(-1px);
+    }
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 50px auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    padding: 20px 30px;
+    background: linear-gradient(to right, #005792, #0086d6);
+    color: white;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .modal-header h2 {
+        margin: 0;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+.close-modal {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .close-modal:hover {
+        opacity: 0.8;
+    }
+
+.modal-body {
+    padding: 30px;
+}
+
+.modal-footer {
+    padding: 20px 30px;
+    background: #f9fbfd;
+    border-top: 1px solid #eef2f7;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+    .modal-table thead {
+        background: #f0f7ff;
+    }
+
+    .modal-table th {
+        padding: 16px 12px;
+        text-align: left;
+        color: #005792;
+        font-weight: 600;
+        border-bottom: 2px solid #e1e8f0;
+    }
+
+    .modal-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .modal-table tbody tr:hover {
+        background-color: #f9fbfd;
+    }
+
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e1e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background-color: #f9fbfd;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: #005792;
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(0, 87, 146, 0.1);
+    }
+
+.medicine-select, .quantity-input, .price-input {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.remove-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .remove-btn:hover {
+        background: #b71c1c;
+        transform: translateY(-1px);
+    }
+
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.summary-item {
+    margin-bottom: 15px;
+}
+
+.summary-label {
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.summary-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #005792;
+}
+
+.discount-input {
+    width: 120px;
+    padding: 8px 12px;
+    border: 2px solid #e1e8f0;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: right;
+}
+
+    .discount-input:focus {
+        outline: none;
+        border-color: #005792;
+    }
+
+.grid-container {
+    max-height: 700px;
+    overflow: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    position: relative;
+}
+
+.invoices-grid {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+  
+    .invoices-grid tr:first-child {
+        position: sticky;
+        top: 0;
+    }
+
+        .invoices-grid tr:first-child th {
+            background-color: #f0f7ff;
+            color: #005792;
+            padding: 12px 10px;
+            top: 0;
+        }
+
+    .invoices-grid td {
+        padding: 10px;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    
+    .invoices-grid thead {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+        .invoices-grid thead tr {
+            position: sticky;
+            top: 0;
+        }
+
+        .invoices-grid thead th {
+            position: sticky;
+            top: 0;
+            background-color: #005792;
+            color: white;
+            padding: 12px 10px;
+        }
+
+
+.pager {
+    text-align: center;
+    padding: 12px 0;
+}
+
+   
+    .pager a,
+    .pager span {
+        display: inline-block;
+        padding: 6px 12px;
+        margin: 0 3px;
+        border: 1px solid #005792;
+        color: #005792;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+      
+        .pager a:hover {
+            background-color: #005792;
+            color: #fff;
+        }
+
+ 
+    .pager span {
+        background-color: #005792;
+        color: #fff;
+        font-weight: bold;
+    }
+
+
+
+
+#modalBillingTable th
+#modalBillingTable td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#modalBillingTable th:nth-child(1),
+#modalBillingTable td:nth-child(1) {
+    width: 20%;
+}
+#modalBillingTable th:nth-child(2),
+#modalBillingTable td:nth-child(2) {
+    width: 10%;
+}
+
+#modalBillingTable th:nth-child(3),
+#modalBillingTable td:nth-child(3) {
+    width: 15%;
+}
+
+#modalBillingTable th:nth-child(4),
+#modalBillingTable td:nth-child(4) {
+    width: 10%;
+}
+
+#modalBillingTable th:nth-child(5),
+#modalBillingTable td:nth-child(5) {
+    width: 15%;
+}
+
+#modalBillingTable th:nth-child(6),
+#modalBillingTable td:nth-child(6) {
+    width: 15%;
+}
+#modalBillingTable th:nth-child(7),
+#modalBillingTable td:nth-child(7) {
+    width: 10%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #005792;
+    margin: 0;
+}
+
+.invoice-no {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+    .invoice-no strong {
+        color: #005792;
+        font-weight: 600;
+    }
+
+
+
+#modalBillingTable th
+#modalBillingTable td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#modalBillingTable th:nth-child(1),
+#modalBillingTable td:nth-child(1) {
+    width: 20%;
+}
+#modalBillingTable th:nth-child(2),
+#modalBillingTable td:nth-child(2) {
+    width: 15%;
+}
+#modalBillingTable th:nth-child(3),
+#modalBillingTable td:nth-child(3) {
+    width: 15%;
+}
+
+#modalBillingTable th:nth-child(4),
+#modalBillingTable td:nth-child(4) {
+    width: 10%;
+}
+
+#modalBillingTable th:nth-child(5),
+#modalBillingTable td:nth-child(5) {
+    width: 10%;
+}
+
+#modalBillingTable th:nth-child(6),
+#modalBillingTable td:nth-child(6) {
+    width: 15%;
+}
+#modalBillingTable th:nth-child(7),
+#modalBillingTable td:nth-child(7) {
+    width: 10%;
+}
+

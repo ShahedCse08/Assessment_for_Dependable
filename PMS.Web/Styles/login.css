@@ -1,0 +1,217 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 87, 146, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+    .login-container:hover {
+        transform: translateY(-5px);
+    }
+
+.login-header {
+    background: linear-gradient(to right, #005792, #0086d6);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+    .login-header::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+        background-size: 20px 20px;
+        opacity: 0.3;
+        transform: rotate(30deg);
+    }
+
+.pharmacy-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.login-header h2 {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+#form1 {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.input-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #005792;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #e1e8f0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s;
+    background-color: #f9fbfd;
+    color: #333;
+}
+
+    .form-input:focus {
+        outline: none;
+        border-color: #005792;
+        background-color: white;
+        box-shadow: 0 0 0 3px rgba(0, 87, 146, 0.1);
+    }
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #7a8a9c;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#lblMessage {
+    display: none;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #fff2f2;
+    color: #d32f2f;
+    border-left: 4px solid #d32f2f;
+    animation: fadeIn 0.5s;
+}
+
+    #lblMessage:not(:empty) {
+        display: block;
+    }
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-container {
+    margin-top: 30px;
+}
+
+#btnLogin {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(to right, #005792, #0086d6);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 87, 146, 0.2);
+}
+
+    #btnLogin:hover {
+        background: linear-gradient(to right, #004576, #0070b8);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 87, 146, 0.3);
+    }
+
+    #btnLogin:active {
+        transform: translateY(0);
+    }
+
+
+.form-group {
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+    .form-group:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .form-group:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+.btn-container {
+    animation: slideUp 0.5s ease 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

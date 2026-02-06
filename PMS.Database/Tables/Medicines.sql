@@ -1,0 +1,13 @@
+﻿CREATE TABLE Medicines
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    BatchNumber NVARCHAR(50) NOT NULL,
+    ExpiryDate DATE NOT NULL,
+    Stock INT NOT NULL,
+    UnitPrice DECIMAL(10,2) NOT NULL,
+    CreatedBy INT NOT NULL,
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
+    UpdatedBy INT NULL,
+    UpdatedAt DATETIME NULL 
+);
